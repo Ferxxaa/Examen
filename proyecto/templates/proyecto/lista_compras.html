@@ -1,0 +1,32 @@
+{% extends 'proyecto/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        <h2 class="text-center mb-4">Lista de Compras</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Fecha de Compra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for compra in compras %}
+                        <tr>
+                            <td>{{ compra.usuario.username }}</td>
+                            <td>{{ compra.producto }}</td>
+                            <td>${{ compra.precio_unitario }}</td>
+                            <td>{{ compra.cantidad }}</td>
+                            <td>{{ compra.fecha_compra }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

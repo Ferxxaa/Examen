@@ -1,0 +1,9 @@
+{% extends 'proyecto/base.html' %}
+
+{% block content %}
+<h1>Panel de Administración</h1>
+<p>Bienvenido al panel de administración.</p>
+
+<a href="{% url 'lista_compras' %}" class="btn btn-primary">Ir a Lista de Compras</a>
+<a href="{% url 'Add' %}" class="btn btn-success">Agregar Producto</a>
+{% endblock %}
